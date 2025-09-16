@@ -10,7 +10,7 @@ Characterizes the thermal conductivity of a material layer.
 
 ## Description
 
-The `Layer` class defines the thermal conductivity of a material layer—whether isotropic, uniaxially anisotropic, or fully anisotropic—and specifies how conductivity is expressed in user inputs. It also handles conversion of user inputs into the tensor representation, which is required by the internal [`ForwardModel`](MLTI/Documentation/ForwardModel) solver.
+The `Layer` class defines the thermal conductivity of a material layer—whether isotropic, uniaxially anisotropic, or fully anisotropic—and specifies how conductivity is expressed in user inputs. It also handles conversion of user inputs into the tensor representation, which is required by the internal [`ForwardModel`](Documentation/ForwardModel) solver.
 
 **Supported Representations:**
 <ul>
