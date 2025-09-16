@@ -9,7 +9,7 @@ permalink: /Documentation/Layer/toTensor
 Converts user inputs to tensor representation.
 
 ## Syntax
-The appropriate syntax to use depends on the [`isotropy`](/MLTI/Documentation/Layer#isotropy-argument) and [`orient`](/MLTI/Documentation/Layer#orient-argument) [`Layer`](/MLTI/Documentation/Layer) properties. The [`inputStr`](/MLTI/Documentation/Layer#inputStr-property) [`Layer`](/MLTI/Documentation/Layer) property specifies which base syntax to use.  For example, if <code>layer.inputStr == <wbr>["k⊥",<wbr>"k∥",<wbr>"θ_az",<wbr>"θ_pol"]</code>, then the user should call <code>toTensor(<wbr>layer,<wbr>k⊥,<wbr>k∥,<wbr>θ_az,<wbr>θ_pol)</code><br>
+The appropriate syntax to use depends on the [`isotropy`](/Documentation/Layer#isotropy-argument) and [`orient`](/Documentation/Layer#orient-argument) [`Layer`](/Documentation/Layer) properties. The [`inputStr`](/Documentation/Layer#inputStr-property) [`Layer`](/Documentation/Layer) property specifies which base syntax to use.  For example, if <code>layer.inputStr == <wbr>["k⊥",<wbr>"k∥",<wbr>"θ_az",<wbr>"θ_pol"]</code>, then the user should call <code>toTensor(<wbr>layer,<wbr>k⊥,<wbr>k∥,<wbr>θ_az,<wbr>θ_pol)</code><br>
 
 **Available syntaxes:**
 
