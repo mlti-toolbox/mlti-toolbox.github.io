@@ -55,7 +55,7 @@ Supported thermal conductivity isotropy types
 
 ## See Also
 ### MLTI Companion Classes and Methods
-[`OrientEnum`](/MLTI/Documentation/OrientEnum) | [`Layer`](/MLTI/Documentation/Layer)
+[`OrientEnum`](/Documentation/OrientEnum) | [`Layer`](/Documentation/Layer)
 
 ### MATLAB Topics
 [Enumerations](https://www.mathworks.com/help/matlab/enumeration-classes.html)<br>
