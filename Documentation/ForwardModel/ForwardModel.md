@@ -28,7 +28,7 @@ Where
     <li>\(\mathbf{X}_\mathrm{probe}\) is an array of probe offsets</li>
 </ul>
 
-See [`ForwardModel.solve`](/MLTI/Documentation/ForwardModel/solve) for more details.
+See [`ForwardModel.solve`](/Documentation/ForwardModel/solve) for more details.
 
 <p>
 The sample is expected to consist of a substrate layer and a thin film layer, modeled as semi-infinite in the \(x\)- and \(y\)-directions. Furthermore, the top surface of the sample \(\left(z=0\right)\) is modeled as insulated.
@@ -44,7 +44,7 @@ The sample is expected to consist of a substrate layer and a thin film layer, mo
 
 <a id="d1"></a>
 
-`fm = ForwardModel(`[`film`](#film-argument)`,`[`substrate`](#substrate-argument)`,`[`ift_solver`](#ift-solver-argument)`,`[`Name,Value`](#name-value-arguments)`)` creates a `ForwardModel` object according to user specifications. `film` and `substrate` are [`Layer`](/MLTI/Documentation/Layer) objects that specify how thermal conductivity will be represented in their respective layers. `ift_solver` is an [`IFTSolver`](/MLTI/Documentation/IFTSolver) object with specifications for solving the inverse Fourier transform. Name-value arguments specify additional `ForwardModel` options.
+`fm = ForwardModel(`[`film`](#film-argument)`,`[`substrate`](#substrate-argument)`,`[`ift_solver`](#ift-solver-argument)`,`[`Name,Value`](#name-value-arguments)`)` creates a `ForwardModel` object according to user specifications. `film` and `substrate` are [`Layer`](/Documentation/Layer) objects that specify how thermal conductivity will be represented in their respective layers. `ift_solver` is an [`IFTSolver`](/Documentation/IFTSolver) object with specifications for solving the inverse Fourier transform. Name-value arguments specify additional `ForwardModel` options.
 
 ### Input Arguments
 
@@ -443,8 +443,8 @@ Argument names are *case-insensitive*, and you can use any unique leading substr
 
 ### ForwardModel methods
 
-[`ForwardModel.plot`](/MLTI/Documentation/ForwardModel/plot) |
-[`ForwardModel.solve`](/MLTI/Documentation/ForwardModel/solve)
+[`ForwardModel.plot`](/Documentation/ForwardModel/plot) |
+[`ForwardModel.solve`](/Documentation/ForwardModel/solve)
 
 ### Companion Classes and Functions
 
