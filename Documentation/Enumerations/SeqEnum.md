@@ -43,7 +43,7 @@ Supported Euler sequences
 
 ## See Also
 ### MLTI Companion Classes and Methods
-[`IsotropyEnum`](/MLTI/Documentation/IsotropyEnum) | [`OrientEnum`](/MLTI/Documentation/OrientEnum) | [`Layer`](/MLTI/Documentation/Layer)
+[`IsotropyEnum`](/Documentation/IsotropyEnum) | [`OrientEnum`](/Documentation/OrientEnum) | [`Layer`](/Documentation/Layer)
 
 ### MATLAB Built-in Methods
 [`eul2rotm`](https://www.mathworks.com/help/robotics/ref/eul2rotm.html)
