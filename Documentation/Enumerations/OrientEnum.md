@@ -71,7 +71,7 @@ Supported direction/orientation types
 
 ## See Also
 ### MLTI Companion Classes and Methods
-[`IsotropyEnum`](/MLTI/Documentation/IsotropyEnum) | [`SeqEnum`](/MLTI/Documentation/SeqEnum) | [`Layer`](/MLTI/Documentation/Layer)
+[`IsotropyEnum`](/Documentation/IsotropyEnum) | [`SeqEnum`](/Documentation/SeqEnum) | [`Layer`](/Documentation/Layer)
 
 ### MATLAB Built-in Methods
 [`eul2rotm`](https://www.mathworks.com/help/robotics/ref/eul2rotm.html) | [`quat2rotm`](https://www.mathworks.com/help/robotics/ref/quat2rotm.html)
