@@ -1,5 +1,5 @@
-title: Modulated Laser Thermal Inference (MLTI) Toolbox
-description: MLTI Description
+title: MLTI (Modulated Laser Thermal Inference)
+description: A free-to-use/open-source MATLAB toolbox for inferring thermal properties in a film–substrate bilayer given thermal wave data.
 show_downloads: false
 google_analytics:
 remote_theme: pages-themes/minimal@v0.2.0
