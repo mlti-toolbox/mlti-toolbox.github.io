@@ -39,7 +39,7 @@ Inverse Fourier transform evaluation methods
 
 ## See Also
 ### MLTI Companion Classes and Methods
-[`IFTSolver`](/MLTI/Documentation/IFTSolver)
+[`IFTSolver`](/Documentation/IFTSolver)
 
 ### MATLAB Built-in Methods
 [`ifft2`](https://www.mathworks.com/help/matlab/ref/ifft2.html) | [`integral2`](https://www.mathworks.com/help/matlab/ref/integral2.html)
