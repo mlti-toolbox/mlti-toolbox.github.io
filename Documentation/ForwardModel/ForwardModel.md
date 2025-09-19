@@ -11,10 +11,10 @@ Models the surface thermal response induced by a laser heat source with Gaussian
 ## Description
     
 <p>
-The <code>ForwardModel</code> class predicts the surface thermal response induced by a pump laser heat source with Gaussian spatial distribution and harmonic temporal modulation. Specifically, it returns the phase lag \(\mathbf{\upphi}\), amplitude \(\mathbf{A}\), and DC temperature rise \(\Delta\mathbf{T}_\mathrm{DC}\) at specific probe offsets \(\mathbf{X}_\mathrm{probe}\) within some error \(\mathbf{\upepsilon}_T\).
+The <code>ForwardModel</code> class predicts the surface thermal response induced by a pump laser heat source with Gaussian spatial distribution and harmonic temporal modulation. Specifically, it returns the phase lag \(\mathbf{\upphi}\) and amplitude \(\mathbf{A}\) given material and experimental parameters, within some degree of error \(\mathbf{\upepsilon}_T\).
 </p>
 <p>
-\({\left\{\mathbf{\upphi}, \mathbf{A}, \Delta\mathbf{T}_\mathrm{DC}\right\}} = {G\left(\mathbf{M}, \mathbf{O}, \chi, \mathbf{f}_0, \mathbf{X}_\mathrm{probe}\right) + \mathbf{\upepsilon}_T}\)
+\({\left\{\mathbf{\upphi}, \mathbf{A}\right\}} = {G\left(\mathbf{M}, \mathbf{O}, \chi, \mathbf{f}_0, \mathbf{X}_\mathrm{probe}\right) + \mathbf{\upepsilon}_T}\)
 </p>
 <p>
 Where
