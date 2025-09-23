@@ -16,12 +16,12 @@ permalink: /Documentation/IFTSolver
 
 ### Description
 <a id="d1"></a>
-`solver = IFTSolver(`<wbr>`method)` creates an `IFTSolver` object that uses the specified method to solve the 2-D inverse Fourier transform.
+`solver = IFTSolver(`<wbr>`method)` creates an `IFTSolver` object that uses the specified method to solve the 2D inverse Fourier transform.
 <p>
   \(
-    \breve{T}_f \left( x, y, 0, f \right) = 
+    \tilde{T}_0 \left( x, y, f \right) = 
     \int_{-\infty}^\infty \int_{-\infty}^\infty 
-    \hat{T}_f \left( u, v, 0, f \right) \, 
+    \hat{T}_0 \left( u, v, f \right) \, 
     \exp \left( 2 i \pi \left( u x + v y \right) \right) \, du \, dv
   \)
 </p>
@@ -30,14 +30,14 @@ permalink: /Documentation/IFTSolver
 </p>
 <hr>
 <a id="d2"></a>
-`solver = IFTSolver(`<wbr>`"ifft2",`<wbr>[`Name,Value`](#name-value-arguments)`)` creates an `IFTSolver` object that uses MATLAB's built-in [`ifft2`](https://www.mathworks.com/help/matlab/ref/ifft2.html) method—with options specified as name-value arguments—to solve the 2-D inverse Fourier transform.
+`solver = IFTSolver(`<wbr>`"ifft2",`<wbr>[`Name,Value`](#name-value-arguments)`)` creates an `IFTSolver` object that uses MATLAB's built-in [`ifft2`](https://www.mathworks.com/help/matlab/ref/ifft2.html) method—with options specified as name-value arguments—to solve the 2D inverse Fourier transform.
 
 ### Input Arguments
 
 <details class="custom-details" id="method-argument">
     <summary>
         <span class="summary-text">
-            <b><code>method</code> - 2-D inverse Fourier transform method</b>
+            <b><code>method</code> - 2D inverse Fourier transform method</b>
             <span class="subline">
               <code>"ifft2"</code> | <code>"integral2"</code> | <code>"vpaintegral"</code> | <a href="{{ '/Documentation/IFTEnum' | relative_url }}"><code>IFTEnum</code></a> object
             </span>
@@ -45,7 +45,7 @@ permalink: /Documentation/IFTSolver
     </summary>
     <div>
         <p>
-            2-D inverse Fourier transform method. When possible, the
+            2D inverse Fourier transform method. When possible, the
             <a href="https://www.mathworks.com/help/matlab/ref/ifft2.html"><code>ifft2</code></a>
             method should be used for its computational efficiency.
             However, if greater accuracy is needed, the
@@ -77,7 +77,7 @@ permalink: /Documentation/IFTSolver
     </summary>
     <div>
         <p>
-            Maximum spatial distance from the pump in the x- and y-directions used in the 2-D inverse fast Fourier transform
+            Maximum spatial distance from the pump in the x- and y-directions used in the 2D inverse fast Fourier transform
             (<a href="https://www.mathworks.com/help/matlab/ref/ifft2.html"><code>ifft2</code></a>).
         </p>
       <p>
@@ -100,14 +100,14 @@ permalink: /Documentation/IFTSolver
     </summary>
     <div>
         <p>
-            Descrete spatial step size—i.e., sampling period—in the x- and y-directions used in the 2-D inverse fast Fourier transform
+            Descrete spatial step size—i.e., sampling period—in the x- and y-directions used in the 2D inverse fast Fourier transform
             (<a href="https://www.mathworks.com/help/matlab/ref/ifft2.html"><code>ifft2</code></a>).
         </p>
       <p>
         When provided as a scalar, <code>dx</code> is expanded (copied) to a 1-by-2 vector.
       </p>
         <p>
-          When not provided or set equal to 0, <code>dx</code> is calculated as <code>x_max ./ floor(Nx/2)</code>.
+          When not provided or when set equal to 0, <code>dx</code> is calculated as <code>x_max / floor(Nx/2)</code>.
         </p>
         <p>
             <b>Data Types:</b> <code>double</code> | <code>single</code>
@@ -126,19 +126,18 @@ permalink: /Documentation/IFTSolver
     </summary>
     <div>
         <p>
-            Number of descrete spatial points—i.e., signal length—in the x- and y-directions used in the 2-D inverse fast Fourier transform
+            Number of descrete spatial points—i.e., signal length—in the x- and y-directions used in the 2D inverse fast Fourier transform
             (<a href="https://www.mathworks.com/help/matlab/ref/ifft2.html"><code>ifft2</code></a>).
         </p>
         <p>
-            When possible, the value of <code>Nx</code> should only have small prime factors as this results in significantly faster execution of the
-            <a href="https://www.mathworks.com/help/matlab/ref/ifft2.html"><code>ifft2</code></a>
-            transform.
+            When possible, the value of <code>Nx</code> should have only small prime factors as this results in significantly faster execution of the
+            <a href="https://www.mathworks.com/help/matlab/ref/ifft2.html"><code>ifft2</code></a> transform.
         </p>
       <p>
         When provided as a scalar, <code>Nx</code> is expanded (copied) to a 1-by-2 vector.
       </p>
       <p>
-        When not provided or set equal to 0 and both <code>x_max</code> and <code>dx</code> are provided, <code>Nx</code> is calculated as <code>floor(x_max/dx) * 2 + 1</code>.
+        When not provided or when set equal to 0, if both <code>x_max</code> and <code>dx</code> are provided <code>Nx</code> is calculated as <code>floor(x_max/dx) * 2 + 1</code>; otherwise, the default value will be used.
       </p>
         <p>
             <b>Data Types:</b> <code>double</code> | <code>single</code> | <code>int8</code> | <code>int16</code> | <code>int32</code> | <code>uint8</code> | <code>uint16</code> | <code>uint32</code>
@@ -159,6 +158,13 @@ permalink: /Documentation/IFTSolver
         <p>
             Interpolation and extrapolation methods for the creation of the <a href="#interp-property"><code>interp</code></a> property. See <a href="https://www.mathworks.com/help/releases/R2025a/matlab/ref/griddedinterpolant.html"><code>griddedInterpolant</code></a> input arguments <a href="https://www.mathworks.com/help/releases/R2025a/matlab/ref/griddedinterpolant.html#bvh2cy0-Method"><code>Method</code></a> and <a href="https://www.mathworks.com/help/releases/R2025a/matlab/ref/griddedinterpolant.html#bvh2cy0-ExtrapolationMethod"><code>ExtrapolationMethod</code></a> for a list of available options.
         </p>
+      <p>
+        If provided as a scalar string or character vector, the input is used for both <code>Method</code> and <code>ExtrapolationMethod</code> (i.e., <code>ExtrapolationMethod = Method</code>)
+      </p>
+      <p>
+        The interpolant will be created using the following command:<br>
+      </p>
+      <pre><code><a href="#interp-property">interp</a> = <a href="https://www.mathworks.com/help/releases/R2025a/matlab/ref/griddedinterpolant.html">griddedInterpolant</a>({<a href="#x-property">x</a>,<a href="y-property">y</a>},zeros(<a href="#Nx-argument">Nx</a>(1),<a href="#Nx-argument">Nx</a>(2)),interp_method(1),interp_method(2))</code></pre>
         <p>
             <b>Data Types:</b> character array | cell of character arrays | string array
         </p>
@@ -270,7 +276,7 @@ In addition to storing the [`method`](#method-argument) argument as a property, 
       <a href="{{ '/Documentation/IFTSolver/solve' | relative_url }}"><code>solve</code></a>
     </td>
     <td>
-      Solves the 2-D inverse Fourier transform
+      Solves the 2D inverse Fourier transform
     </td>
   </tr>
 </table>
