@@ -49,7 +49,7 @@ permalink: /Documentation/IFTSolver
             <a href="https://www.mathworks.com/help/matlab/ref/ifft2.html"><code>ifft2</code></a>
             method should be used for its computational efficiency.
             However, if greater accuracy is needed, the
-            <a href="https://www.mathworks.com/help/matlab/ref/integral2.html"><code>integral2</code></a> or <a href="[https://www.mathworks.com/help/matlab/ref/integral2.html](https://www.mathworks.com/help/releases/R2025a/symbolic/sym.vpaintegral.html)"><code>vpaintegral</code></a>
+            <a href="https://www.mathworks.com/help/matlab/ref/integral2.html"><code>integral2</code></a> or <a href="https://www.mathworks.com/help/releases/R2025a/symbolic/sym.vpaintegral.html"><code>vpaintegral</code></a>
             method may be used instead.
         </p>
         <p>
@@ -263,7 +263,13 @@ In addition to storing the [`method`](#method-argument) argument as a property, 
     </summary>
     <div>
       <p>
-        Interpolates between 
+        Interpolates the surface temperature data <code>T0tilde</code> defined on the discrete <code>(<a href="#x-property">x</a>, <a href="y-property">y</a>)</code> grid to estimate values at probe locations <code>X_probe</code>.
+      </p>
+      <p>
+        <b>Usage:</b><br>
+        <code class="hang">interp.Values = T0tilde;</code><br>
+        <code class="hang">T0tilde = interp(X_probe);</code><br>
+        Where <code>X_probe</code> is an <code>N_probe</code>-by-2 numeric matrix.
       </p>
       <p>
         <b>Data Type:</b> <a href="https://www.mathworks.com/help/releases/R2025a/matlab/ref/griddedinterpolant.html"><code>griddedInterpolant</code></a>
@@ -285,6 +291,10 @@ In addition to storing the [`method`](#method-argument) argument as a property, 
 ## Examples
 
 ## See Also
-<a href="https://www.mathworks.com/help/releases/R2025a/matlab/ref/griddedinterpolant.html"><code>griddedInterpolant</code></a>
+### MLTI Companion Classes and Methods
+<a href="{{ '/Documentation/IFTEnum' | relative_url }}"><code>IFTEnum</code></a> | <a href="{{ '/Documentation/ForwardModel' | relative_url }}"><code>ForwardModel</code></a>
+
+### MATLAB Methods
+<a href="https://www.mathworks.com/help/matlab/ref/ifft2.html"><code>ifft2</code></a> | <a href="https://www.mathworks.com/help/matlab/ref/integral2.html"><code>integral2</code></a> | <a href="https://www.mathworks.com/help/releases/R2025a/symbolic/sym.vpaintegral.html"><code>vpaintegral</code></a> | <a href="https://www.mathworks.com/help/releases/R2025a/matlab/ref/griddedinterpolant.html"><code>griddedInterpolant</code></a>
 
 
