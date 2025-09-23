@@ -263,7 +263,7 @@ In addition to storing the [`method`](#method-argument) argument as a property, 
     </summary>
     <div>
       <p>
-        Interpolates the surface temperature data <code>T0tilde</code> defined on the discrete <code>(<a href="#x-property">x</a>, <a href="y-property">y</a>)</code> grid to estimate values at probe locations <code>X_probe</code>.
+        Interpolates the surface temperature data <code>T0tilde</code> defined on the discrete <code>(<a href="#x-property">x</a>, <a href="#y-property">y</a>)</code> grid to estimate values at probe locations <code>X_probe</code>.
       </p>
       <p>
         <b>Usage:</b><br>
