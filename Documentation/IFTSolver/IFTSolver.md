@@ -11,12 +11,12 @@ permalink: /Documentation/IFTSolver
 ## Creation
 
 ### Syntax
-<a href="#d1"><code class="hang">solver = IFTSolver(<wbr>"integral2")</code></a><br>
+<a href="#d1"><code class="hang">solver = IFTSolver(<wbr>method)</code></a><br>
 <a href="#d2"><code class="hang">solver = IFTSolver(<wbr>"ifft2",<wbr>Name,<wbr>Value)</code></a>
 
 ### Description
 <a id="d1"></a>
-`solver = IFTSolver(`<wbr>`"integral2")` creates an `IFTSolver` object that uses MATLAB's built-in [`integral2`](https://www.mathworks.com/help/matlab/ref/integral2.html) method to solve the 2-D inverse Fourier transform.
+`solver = IFTSolver(`<wbr>`method)` creates an `IFTSolver` object that uses the specified method to solve the 2-D inverse Fourier transform.
 <p>
   \(
     \breve{T}_f \left( x, y, 0, f \right) = 
@@ -24,6 +24,9 @@ permalink: /Documentation/IFTSolver
     \hat{T}_f \left( u, v, 0, f \right) \, 
     \exp \left( 2 i \pi \left( u x + v y \right) \right) \, du \, dv
   \)
+</p>
+<p>
+  This syntax is only valid for <code>method ∈ {integral2, vpaintegral}</code>.  When <code>method = ifft2</code>, name-value arguments are required.
 </p>
 <hr>
 <a id="d2"></a>
@@ -36,7 +39,7 @@ permalink: /Documentation/IFTSolver
         <span class="summary-text">
             <b><code>method</code> - 2-D inverse Fourier transform method</b>
             <span class="subline">
-              <code>"ifft2"</code> | <code>"integral2"</code> | <a href="{{ '/Documentation/IFTEnum' | relative_url }}"><code>IFTEnum</code></a> object
+              <code>"ifft2"</code> | <code>"integral2"</code> | <code>"vpaintegral"</code> | <a href="{{ '/Documentation/IFTEnum' | relative_url }}"><code>IFTEnum</code></a> object
             </span>
         </span>
     </summary>
@@ -46,17 +49,17 @@ permalink: /Documentation/IFTSolver
             <a href="https://www.mathworks.com/help/matlab/ref/ifft2.html"><code>ifft2</code></a>
             method should be used for its computational efficiency.
             However, if greater accuracy is needed, the
-            <a href="https://www.mathworks.com/help/matlab/ref/integral2.html"><code>integral2</code></a>
+            <a href="https://www.mathworks.com/help/matlab/ref/integral2.html"><code>integral2</code></a> or <a href="[https://www.mathworks.com/help/matlab/ref/integral2.html](https://www.mathworks.com/help/releases/R2025a/symbolic/sym.vpaintegral.html)"><code>vpaintegral</code></a>
             method may be used instead.
         </p>
         <p>
-            When <code>ift_method = "ifft2"</code>, name-value arguments must also be provided.
+            When <code>method = "ifft2"</code>, name-value arguments must also be provided.
         </p>
         <p>
             <code>char</code> and <code>string</code> inputs are <i>case-insensitive</i> and may be specified as a unique leading substring of any one of the above listed options.
         </p>
         <p>
-            <b>Data Types:</b> <code>char</code> | <code>string</code> | <a href="{{ '/Documentation/IFTEnum' | relative_url }}"><code>IFTEnum</code></a> object
+            <b>Data Types:</b> <code>char</code> | <code>string</code> | <a href="{{ '/Documentation/IFTEnum' | relative_url }}"><code>IFTEnum</code></a>
         </p>
     </div>
 </details>
@@ -104,7 +107,7 @@ permalink: /Documentation/IFTSolver
         When provided as a scalar, <code>dx</code> is expanded (copied) to a 1-by-2 vector.
       </p>
         <p>
-          When not provided, <code>dx</code> is calculated as <code>x_max ./ floor(Nx/2)</code>.
+          When not provided or set equal to 0, <code>dx</code> is calculated as <code>x_max ./ floor(Nx/2)</code>.
         </p>
         <p>
             <b>Data Types:</b> <code>double</code> | <code>single</code>
@@ -135,10 +138,29 @@ permalink: /Documentation/IFTSolver
         When provided as a scalar, <code>Nx</code> is expanded (copied) to a 1-by-2 vector.
       </p>
       <p>
-        When not provided, but <code>x_max</code> and <code>dx</code> are, <code>Nx</code> is calculated as <code>floor(x_max/dx) * 2 + 1</code>.
+        When not provided or set equal to 0 and both <code>x_max</code> and <code>dx</code> are provided, <code>Nx</code> is calculated as <code>floor(x_max/dx) * 2 + 1</code>.
       </p>
         <p>
             <b>Data Types:</b> <code>double</code> | <code>single</code> | <code>int8</code> | <code>int16</code> | <code>int32</code> | <code>uint8</code> | <code>uint16</code> | <code>uint32</code>
+        </p>
+    </div>
+</details>
+
+<details class="custom-details" id="interp_method-argument">
+    <summary>
+        <span class="summary-text">
+            <b><code>interp_methods</code> - Interpolation and extrapolation methods</b>
+            <span class="subline">
+              <code>["linear","linear"]</code> (default) | [Method, ExtrapolationMethod]
+            </span>
+        </span>
+    </summary>
+    <div>
+        <p>
+            Interpolation and extrapolation methods for the creation of the <a href="#interp-property"><code>interp</code></a> property. See <a href="https://www.mathworks.com/help/releases/R2025a/matlab/ref/griddedinterpolant.html"><code>griddedInterpolant</code></a> input arguments <a href="https://www.mathworks.com/help/releases/R2025a/matlab/ref/griddedinterpolant.html#bvh2cy0-Method"><code>Method</code></a> and <a href="https://www.mathworks.com/help/releases/R2025a/matlab/ref/griddedinterpolant.html#bvh2cy0-ExtrapolationMethod"><code>ExtrapolationMethod</code></a> for a list of available options.
+        </p>
+        <p>
+            <b>Data Types:</b> character array | cell of character arrays | string array
         </p>
     </div>
 </details>
@@ -170,7 +192,7 @@ In addition to storing the [`method`](#method-argument) argument as a property, 
         <span class="summary-text">
             <b><code>y</code> - descrete spatial vector</b>
             <span class="subline">
-                Read only: double column vector
+                Read only: double row vector
             </span>
         </span>
     </summary>
@@ -208,7 +230,7 @@ In addition to storing the [`method`](#method-argument) argument as a property, 
         <span class="summary-text">
             <b><code>v</code> - descrete spatial-frequency vector</b>
             <span class="subline">
-                Read only: double column vector
+                Read only: double row vector
             </span>
         </span>
     </summary>
@@ -218,6 +240,25 @@ In addition to storing the [`method`](#method-argument) argument as a property, 
       </p>
       <p>
         <b>Data Type:</b> <code>double</code>
+      </p>
+    </div>
+</details>
+
+<details class="custom-details" id="interp-property">
+    <summary>
+        <span class="summary-text">
+            <b><code>interp</code> - Interpolant</b>
+            <span class="subline">
+                Read only: scalar <a href="https://www.mathworks.com/help/releases/R2025a/matlab/ref/griddedinterpolant.html"><code>griddedInterpolant</code></a> object
+            </span>
+        </span>
+    </summary>
+    <div>
+      <p>
+        Interpolates between 
+      </p>
+      <p>
+        <b>Data Type:</b> <a href="https://www.mathworks.com/help/releases/R2025a/matlab/ref/griddedinterpolant.html"><code>griddedInterpolant</code></a>
       </p>
     </div>
 </details>
@@ -236,7 +277,6 @@ In addition to storing the [`method`](#method-argument) argument as a property, 
 ## Examples
 
 ## See Also
-
-
+<a href="https://www.mathworks.com/help/releases/R2025a/matlab/ref/griddedinterpolant.html"><code>griddedInterpolant</code></a>
 
 
