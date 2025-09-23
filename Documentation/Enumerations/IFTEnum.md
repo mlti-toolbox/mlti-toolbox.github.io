@@ -35,14 +35,22 @@ Inverse Fourier transform evaluation methods
       Use MATLAB's built-in <a href="https://www.mathworks.com/help/matlab/ref/integral2.html"><code>integral2</code></a> method
     </td>
   </tr>
+    <tr>
+    <td>
+      <code>vpaintegral</code>
+    </td>
+    <td>
+      Use the MATLAB Symbolic Toolbox <a href="https://www.mathworks.com/help/releases/R2025a/symbolic/sym.vpaintegral.html"><code>vpaintegral</code></a> method
+    </td>
+  </tr>
 </table>
 
 ## See Also
 ### MLTI Companion Classes and Methods
 [`IFTSolver`](/Documentation/IFTSolver)
 
-### MATLAB Built-in Methods
-[`ifft2`](https://www.mathworks.com/help/matlab/ref/ifft2.html) | [`integral2`](https://www.mathworks.com/help/matlab/ref/integral2.html)
+### MATLAB Methods
+[`ifft2`](https://www.mathworks.com/help/matlab/ref/ifft2.html) | [`integral2`](https://www.mathworks.com/help/matlab/ref/integral2.html) | [`vpaintegral`](https://www.mathworks.com/help/releases/R2025a/symbolic/sym.vpaintegral.html)
 
 ### MATLAB Topics
 [Enumerations](https://www.mathworks.com/help/matlab/enumeration-classes.html)<br>
