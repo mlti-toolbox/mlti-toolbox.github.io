@@ -92,7 +92,7 @@ permalink: /Documentation/IFTSolver
 <details class="custom-details" id="dx-argument">
     <summary>
         <span class="summary-text">
-            <b><code>dx</code> - Descrete spatial step size</b>
+            <b><code>dx</code> - Discrete spatial step size</b>
             <span class="subline">
               positive real scalar | 1-by-2 positive real vector
             </span>
@@ -100,7 +100,7 @@ permalink: /Documentation/IFTSolver
     </summary>
     <div>
         <p>
-            Descrete spatial step size—i.e., sampling period—in the x- and y-directions used in the 2D inverse fast Fourier transform
+            Discrete spatial step size—i.e., sampling period—in the x- and y-directions used in the 2D inverse fast Fourier transform
             (<a href="https://www.mathworks.com/help/matlab/ref/ifft2.html"><code>ifft2</code></a>).
         </p>
       <p>
@@ -126,7 +126,7 @@ permalink: /Documentation/IFTSolver
     </summary>
     <div>
         <p>
-            Number of descrete spatial points—i.e., signal length—in the x- and y-directions used in the 2D inverse fast Fourier transform
+            Number of discrete spatial points—i.e., signal length—in the x- and y-directions used in the 2D inverse fast Fourier transform
             (<a href="https://www.mathworks.com/help/matlab/ref/ifft2.html"><code>ifft2</code></a>).
         </p>
         <p>
@@ -179,7 +179,7 @@ In addition to storing the [`method`](#method-argument) argument as a property, 
 <details class="custom-details" id="x-property">
     <summary>
         <span class="summary-text">
-            <b><code>x</code> - descrete spatial vector</b>
+            <b><code>x</code> - Discrete spatial vector</b>
             <span class="subline">
                 Read only: double column vector
             </span>
@@ -187,7 +187,7 @@ In addition to storing the [`method`](#method-argument) argument as a property, 
     </summary>
     <div>
       <p>
-        Descrete spatial vector in the x-direction, calculated as <code>dx(1) * (-floor(Nx(1)/2) : ceil(Nx(1)/2) - 1)</code>.
+        Discrete spatial vector in the x-direction, calculated as <code>dx(1) * (-floor(Nx(1)/2) : ceil(Nx(1)/2) - 1)</code>.
       </p>
       <p>
         <b>Data Type:</b> <code>double</code>
@@ -198,7 +198,7 @@ In addition to storing the [`method`](#method-argument) argument as a property, 
 <details class="custom-details" id="y-property">
     <summary>
         <span class="summary-text">
-            <b><code>y</code> - descrete spatial vector</b>
+            <b><code>y</code> - Discrete spatial vector</b>
             <span class="subline">
                 Read only: double row vector
             </span>
@@ -206,7 +206,7 @@ In addition to storing the [`method`](#method-argument) argument as a property, 
     </summary>
     <div>
       <p>
-        Descrete spatial vector in the y-direction, calculated as <code>dx(2) * (-floor(Nx(2)/2) : ceil(Nx(2)/2) - 1)</code>.
+        Discrete spatial vector in the y-direction, calculated as <code>dx(2) * (-floor(Nx(2)/2) : ceil(Nx(2)/2) - 1)</code>.
       </p>
       <p>
         <b>Data Type:</b> <code>double</code>
@@ -217,7 +217,7 @@ In addition to storing the [`method`](#method-argument) argument as a property, 
 <details class="custom-details" id="u-property">
     <summary>
         <span class="summary-text">
-            <b><code>u</code> - descrete spatial-frequency vector</b>
+            <b><code>u</code> - Discrete spatial-frequency vector</b>
             <span class="subline">
                 Read only: double column vector
             </span>
@@ -225,7 +225,7 @@ In addition to storing the [`method`](#method-argument) argument as a property, 
     </summary>
     <div>
       <p>
-        Descrete spatial-frequency vector in the x-direction, calculated as <code>(-floor(Nx(1)/2) : ceil(Nx(1)/2) - 1) / (Nx(1) * dx(1))</code>.
+        Discrete spatial-frequency vector in the x-direction, calculated as <code>(-floor(Nx(1)/2) : ceil(Nx(1)/2) - 1) / (Nx(1) * dx(1))</code>.
       </p>
       <p>
         <b>Data Type:</b> <code>double</code>
@@ -236,7 +236,7 @@ In addition to storing the [`method`](#method-argument) argument as a property, 
 <details class="custom-details" id="v-property">
     <summary>
         <span class="summary-text">
-            <b><code>v</code> - descrete spatial-frequency vector</b>
+            <b><code>v</code> - Discrete spatial-frequency vector</b>
             <span class="subline">
                 Read only: double row vector
             </span>
@@ -244,7 +244,7 @@ In addition to storing the [`method`](#method-argument) argument as a property, 
     </summary>
     <div>
       <p>
-        Descrete spatial-frequency vector in the y-direction, calculated as <code>(-floor(Nx(2)/2) : ceil(Nx(2)/2) - 1) / (Nx(2) * dx(2))</code>.
+        Discrete spatial-frequency vector in the y-direction, calculated as <code>(-floor(Nx(2)/2) : ceil(Nx(2)/2) - 1) / (Nx(2) * dx(2))</code>.
       </p>
       <p>
         <b>Data Type:</b> <code>double</code>
