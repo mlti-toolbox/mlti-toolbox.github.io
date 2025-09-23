@@ -164,7 +164,9 @@ permalink: /Documentation/IFTSolver
       <p>
         The interpolant will be created using the following command:<br>
       </p>
-      <pre><code><a href="#interp-property">interp</a> = <a href="https://www.mathworks.com/help/releases/R2025a/matlab/ref/griddedinterpolant.html">griddedInterpolant</a>({<a href="#x-property">x</a>,<a href="y-property">y</a>},zeros(<a href="#Nx-argument">Nx</a>(1),<a href="#Nx-argument">Nx</a>(2)),interp_method(1),interp_method(2))</code></pre>
+      <p>
+      <code class="hang"><a href="#interp-property">interp</a> = <a href="https://www.mathworks.com/help/releases/R2025a/matlab/ref/griddedinterpolant.html">griddedInterpolant</a>(<wbr>{<a href="#x-property">x</a>,<a href="#y-property">y</a>},<wbr>zeros(<a href="#Nx-argument">Nx</a>(1),<a href="#Nx-argument">Nx</a>(2)),<wbr>interp_method(1),<wbr>interp_method(2))</code>
+    </p>
         <p>
             <b>Data Types:</b> character array | cell of character arrays | string array
         </p>
